@@ -25,4 +25,5 @@ You can change the file name and look at the schema at the top of `trydeploy.py`
 
 ### Windows Task Scheduler
   * It's recommended that this script be added as a task to be run every `X` unit of time.
+  * You can use `deploy.ps1` as the basis script to be run for the task scheduler action.
   * [More resources in doing so can be found here.](https://www.jcchouinard.com/python-automation-using-task-scheduler/)
