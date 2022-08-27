@@ -8,8 +8,9 @@ Windows deploy script for echoStudy's server instance.
   ```
 
 ### Flags
-  * `--force` - try deploying even if local is up-to-date or builds aren't passing
-  * `--fast`  - run an incremental install instead of a clean one for npm dependencies
+  * `--force`   - try deploying even if local is up-to-date or builds aren't passing
+  * `--fast`    - run an incremental install instead of a clean one for npm dependencies
+  * `--legacy`  - pass `--legacy-peer-deps` when running `npm [i | ci]`
 
 ### Deploy configuration
 A deploy configuration file is required for the script to work. 
