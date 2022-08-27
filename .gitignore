@@ -3,3 +3,7 @@ __pycache__/
 
 # deploy config
 _deploy.yml
+
+# helpful ignores for setting up task scheduler
+deploy.ps1
+deploy-logs/
