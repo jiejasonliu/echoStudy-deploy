@@ -58,8 +58,10 @@ class CmdHelper:
         cmd = ['git', 'pull']
         return self._run_for_exit_code(cmd)
 
-    def npm_install(self, clean=False) -> int:
+    def npm_install(self, clean=False, legacy=False) -> int:
         shell_cmd = 'npm ci' if clean else 'npm i'
+        if legacy:
+            shell_cmd = f"{shell_cmd} --legacy-peer-deps"
         return self._run_shell_for_exit_code(shell_cmd, timeout=300)
 
     def npm_build(self) -> int:

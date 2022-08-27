@@ -60,7 +60,7 @@ def try_deploy(cmd: CmdHelper, args) -> bool:
 
             # update npm deps
             clean_install = not args.fast
-            return_code = cmd.npm_install(clean=clean_install)
+            return_code = cmd.npm_install(clean=clean_install, legacy=args.legacy)
             exit_non_zero(return_code, 'npm ci' if clean_install else 'npm i')
 
             # build project distributable
@@ -114,6 +114,12 @@ if __name__ == '__main__':
         action="store_true",
         help="An optimized deploy; instead of a clean install, we run a simple revision install",
         dest="fast"
+    )
+    parser.add_argument(
+        "--legacy",
+        action="store_true",
+        help="Use --legacy-peer-deps when installing npm packages",
+        dest="legacy"
     )
     args = parser.parse_args()
 
